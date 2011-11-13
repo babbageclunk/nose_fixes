@@ -1,5 +1,6 @@
 from imp import new_module
 from nose.case import Test
+from nose.loader import TestLoader
 from unittest import TestCase
 
 class Tests(TestCase):
@@ -8,7 +9,8 @@ class Tests(TestCase):
         from nose_fixes.plugin import Plugin
         plugin = Plugin()
         plugin.test_suite_func = 'test_suite'
-        self.l = plugin.prepareTestLoader(None)
+        self.l = TestLoader()
+        plugin.prepareTestLoader(self.l)
         
     def test_suite(self):
 

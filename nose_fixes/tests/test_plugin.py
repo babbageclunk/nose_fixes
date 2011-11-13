@@ -37,6 +37,7 @@ class Tests(TestCase):
         self.assertTrue(self.plugin.show_docstrings)
 
     def test_prepareTestResult_sets_descriptions(self):
+        'this test has a docstring'
         thing = object()
         self.plugin.show_docstrings = thing
         class FakeResult(object):
